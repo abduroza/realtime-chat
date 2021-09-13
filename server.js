@@ -46,7 +46,7 @@ io.on("connection", function(socket){
         let messageData = null
         const data = {
             name,
-            user_id: socket_id
+            user_id: socket.id
         }
         const user = await db.addUser(data)
         if (user) {
