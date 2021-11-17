@@ -81,11 +81,11 @@
 
           setup(){
               let newMessage = ref(null)
-              let typing = ref(false)
+              let typing = ref(false) //jika reff pakai .value
               let ready = ref(false)
-              let info = reactive([])
+              let info = reactive([]) //array. jika reacitive pakainya .push
               let connections = ref(0)
-              const messages = reactive([])
+              const messages = reactive([]) //array
               const username = ref(null)
 
               window.onbeforeunload = () => {

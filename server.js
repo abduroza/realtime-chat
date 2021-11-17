@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "index.html")
 })
 io.on("connection", function(socket){
-    console.log("A user wiht ID: " + socket.id + " connected")
+    console.log("A user with ID: " + socket.id + " connected")
 
     socket.on('disconnect', function(){
         console.log("A user with ID: " + socket.id + " disconnected")
@@ -35,6 +35,7 @@ io.on("connection", function(socket){
     })
 
     socket.on("typing", (data) => {
+        // send data except itself
         socket.broadcast.emit("typing", data)
     })
 
